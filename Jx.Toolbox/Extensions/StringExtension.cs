@@ -1,6 +1,6 @@
-﻿namespace Jx.Toolbox.Extentions
+﻿namespace Jx.Toolbox.Extensions
 {
-    public static class StringExtention
+    public static class StringExtension
     {
         /// <summary>
         /// 字符串是否为空

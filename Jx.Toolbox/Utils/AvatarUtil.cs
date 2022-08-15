@@ -2,7 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Jx.Toolbox.Cryptography;
-using Jx.Toolbox.Extentions;
+using Jx.Toolbox.Extensions;
 
 namespace Jx.Toolbox.Utils
 {
