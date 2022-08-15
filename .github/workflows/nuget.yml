@@ -23,8 +23,9 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      uses: Rebel028/publish-nuget@v2.7.0
+      uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: Jx.Toolbox/Jx.Toolbox.csproj
-        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+        
