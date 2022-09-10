@@ -15,10 +15,16 @@ await AvatarUtil.GetAvatarBytesAsync("你要获取的Email地址");
 
 ## 扩展库
 
-StringExtention
+StringExtension
 ```
 "字符串".IsNullOrEmpty();
 ```
+
+ObjectExtension
+```
+object.SetProperty(propertyName, value);
+```
+使用反射给实例赋值
 
 ## 加密库
 
