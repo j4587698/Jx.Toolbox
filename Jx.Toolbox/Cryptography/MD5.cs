@@ -23,5 +23,29 @@ namespace Jx.Toolbox.Cryptography
             }
             return sb.ToString();
         }
+
+        /// <summary>
+        /// MD5加盐加密
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="salt"></param>
+        /// <returns></returns>
+        public static string MD5StringWithSalt(string input, string salt) => MD5String(input + salt);
+
+        /// <summary>
+        /// 二次MD5加密
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static string MD5String2(string input) => MD5String(MD5String(input));
+
+        /// <summary>
+        /// 二次MD5加盐加密
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="salt"></param>
+        /// <returns></returns>
+        public static string MD5String2WithSalt(string input, string salt) =>
+            MD5StringWithSalt(MD5StringWithSalt(input, salt), salt);
     }
 }

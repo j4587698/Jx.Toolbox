@@ -22,7 +22,7 @@ StringExtension
 
 ObjectExtension
 ```
-object.SetProperty(propertyName, value);
+object.SetProperty("属性名", 属性值);
 ```
 使用反射给实例赋值
 
@@ -32,3 +32,15 @@ object.SetProperty(propertyName, value);
 MD5.MD5String("要加密的字符串");
 ```
 获取32位小写的MD5串
+```
+MD5.MD5StringWithSalt("要加密的字符串", "盐");
+```
+获取加盐后的32位小写MD5串
+```
+MD5.MD5String2("要加密的字符串");
+```
+获取2次MD5加密的32位小写MD5串
+```
+MD5.MD5String2WithSalt("要加密的字符串", "盐");
+```
+获取加盐后的2次MD5加密的32位小写MD5串
