@@ -19,6 +19,13 @@ MimeUtil.GetTypeFormExtension("扩展名"); // 根据扩展名获取大类
 MimeUtil.GetExtensionFromMime("Mime"); // 根据Mime获取扩展名
 ```
 
+NumberFormatUtil
+```
+NumberFormatUtil.ToDecimalString(数字, 要转换的进制); // 将long转换为对应进制字符串
+
+NumberFormatUtil.ToLong(对应进制字符串, 原进制); // 将字符串按原进制转换为long
+```
+
 ## 扩展库
 
 StringExtension
