@@ -26,6 +26,18 @@ NumberFormat.ToDecimalString(数字, 要转换的进制); // 将long转换为对
 NumberFormat.ToLong(对应进制字符串, 原进制); // 将字符串按原进制转换为long
 ```
 
+Template
+```
+var template = Template.Create(要渲染的字符串); // 创建Template实例
+template.SetStartKey(开始标志); // 设置变量开始标志，默认为{{
+template.SetEndKey(结束标志); // 设置变量结束标志，默认为}}
+template.SetValue(变量名, 变量值); // 给变量赋值
+var str = template.Render(是否所有变量都必须赋值); // 渲染字符串，如果设置了需要检查变量，则如果有变量未赋值，抛出ArgumentException异常
+
+// 可以使用链式表达式直接完成所有的操作。
+var str = Template.Create(要渲染的字符串).SetStartKey(开始标志).SetEndKey(结束标志).SetValue(变量名, 变量值).Render(是否所有变量都必须赋值);
+```
+
 ## 扩展库
 
 StringExtension
