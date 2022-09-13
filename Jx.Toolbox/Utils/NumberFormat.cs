@@ -4,10 +4,23 @@ using System.Linq;
 
 namespace Jx.Toolbox.Utils
 {
+    /// <summary>
+    /// 数字格式化
+    /// </summary>
     public static class NumberFormat
     {
+        /// <summary>
+        /// 默认的进制字符串
+        /// </summary>
         public static string DefaultDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+        /// <summary>
+        /// 数字转换为对应进制字符串
+        /// </summary>
+        /// <param name="number">要转换的数字</param>
+        /// <param name="radix">进制</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         public static string ToDecimalString(long number, int radix)
         {
             if (radix < 2 || radix > DefaultDigits.Length)
@@ -38,6 +51,12 @@ namespace Jx.Toolbox.Utils
             return new string(ret.ToArray());
         }
 
+        /// <summary>
+        /// 进制字符串转换为数字
+        /// </summary>
+        /// <param name="decimalStr">对应的字符串</param>
+        /// <param name="radix">字符串的进制</param>
+        /// <returns></returns>
         public static long ToLong(string decimalStr, int radix)
         {
             int j = 0;

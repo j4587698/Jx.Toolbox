@@ -2,6 +2,9 @@
 
 namespace Jx.Toolbox.Utils
 {
+    /// <summary>
+    /// Mime相关
+    /// </summary>
     public static class Mime
     {
         /// <summary>
