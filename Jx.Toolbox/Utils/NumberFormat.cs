@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Jx.Toolbox.Utils
 {
-    public class NumberFormatUtil
+    public static class NumberFormat
     {
         public static string DefaultDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

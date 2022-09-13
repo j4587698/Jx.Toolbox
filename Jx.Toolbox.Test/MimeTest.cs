@@ -7,20 +7,20 @@ public class MimeTest
     [Fact]
     public void GetMimeFromExtension()
     {
-        Assert.Equal("application/pdf", MimeUtil.GetMimeFromExtension("pdf"));
-        Assert.Equal("application/pdf", MimeUtil.GetMimeFromExtension(".pdf"));
+        Assert.Equal("application/pdf", Mime.GetMimeFromExtension("pdf"));
+        Assert.Equal("application/pdf", Mime.GetMimeFromExtension(".pdf"));
     }
 
     [Fact]
     public void GetTypeFormExtension()
     {
-        Assert.Equal("image", MimeUtil.GetTypeFormExtension("bmp"));
-        Assert.Equal("image", MimeUtil.GetTypeFormExtension(".bmp"));
+        Assert.Equal("image", Mime.GetTypeFormExtension("bmp"));
+        Assert.Equal("image", Mime.GetTypeFormExtension(".bmp"));
     }
 
     [Fact]
     public void GetExtensionFromMime()
     {
-        Assert.Equal(".pdf", MimeUtil.GetExtensionFromMime("application/pdf"));
+        Assert.Equal(".pdf", Mime.GetExtensionFromMime("application/pdf"));
     }
 }

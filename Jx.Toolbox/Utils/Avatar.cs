@@ -6,7 +6,7 @@ using Jx.Toolbox.Extensions;
 
 namespace Jx.Toolbox.Utils
 {
-    public static class AvatarUtil
+    public static class Avatar
     {
         /// <summary>
         /// 获取头像的Url

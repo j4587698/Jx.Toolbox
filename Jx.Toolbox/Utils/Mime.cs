@@ -2,7 +2,7 @@
 
 namespace Jx.Toolbox.Utils
 {
-    public class MimeUtil
+    public static class Mime
     {
         /// <summary>
         /// 默认的Mime
