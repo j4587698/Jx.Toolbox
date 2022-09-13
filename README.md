@@ -62,3 +62,11 @@ MD5.MD5String2("要加密的字符串"); // 获取2次MD5加密的32位小写MD5
 MD5.MD5String2WithSalt("要加密的字符串", "盐"); // 获取加盐后的2次MD5加密的32位小写MD5串
 ```
 
+# Jx.Toolbox.HtmlTools
+Html相关
+
+## html处理
+```
+await Html.GetAllTagByTagName(要解析的html, 标签名); // 获取html中所有的指定标签节点
+await Html.GetAllImgSrc(要解析的html); // 获取Html中所有的img的src
+```

@@ -22,6 +22,8 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Jx.Toolbox.HtmlTools\Jx.Toolbox.HtmlTools.csproj" />
+      <ProjectReference Include="..\Jx.Toolbox.Html\Jx.Toolbox.Html.csproj" />
       <ProjectReference Include="..\Jx.Toolbox\Jx.Toolbox.csproj" />
     </ItemGroup>
 
