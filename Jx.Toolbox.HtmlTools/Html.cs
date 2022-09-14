@@ -31,8 +31,26 @@ namespace Jx.Toolbox.HtmlTools
         /// <returns></returns>
         public static async Task<IEnumerable<string>> GetAllImgSrc(string html)
         {
-            
             return (await GetAllTagByTagName(html, "img")).Where(x => x.HasAttribute("src")).Select(x => x.GetAttribute("src"));
+        }
+
+        /// <summary>
+        /// 移除所有的Html标签
+        /// </summary>
+        /// <param name="html">要处理的Html</param>
+        /// <param name="length">截取长度（0代表不截取）</param>
+        /// <returns></returns>
+        public static async Task<string> RemoveHtmlTag(string html, int length = 0)
+        {
+            var context = BrowsingContext.New(Configuration.Default);
+            var doc = await context.OpenAsync(req => req.Content(html));
+            var strText = doc.Body.TextContent;
+            if (length > 0 && length < strText.Length)
+            {
+                strText = strText.Substring(0, length);
+            }
+
+            return strText;
         }
     }
 }
