@@ -6,23 +6,19 @@
 Avatar
 ```
 await Avatar.GetAvatarUrl("你要获取的Email地址"); // 使用cnavatar来获取此Email对应的头像地址
-
 await Avatar.GetAvatarBytesAsync("你要获取的Email地址"); // 使用cnavatar来获取此Email对应的头像byte数组
 ```
 
 Mime
 ```
 Mime.GetMimeFromExtension("扩展名"); // 根据扩展名获取Mime
-
 Mime.GetTypeFormExtension("扩展名"); // 根据扩展名获取大类
-
 Mime.GetExtensionFromMime("Mime"); // 根据Mime获取扩展名
 ```
 
 NumberFormat
 ```
 NumberFormat.ToDecimalString(数字, 要转换的进制); // 将long转换为对应进制字符串
-
 NumberFormat.ToLong(对应进制字符串, 原进制); // 将字符串按原进制转换为long
 ```
 
@@ -43,6 +39,8 @@ var str = Template.Create(要渲染的字符串).SetStartKey(开始标志).SetEn
 StringExtension
 ```
 "字符串".IsNullOrEmpty(); // 判断字符串是否为空
+"字符串".IsNullOrWhiteSpace(); // 判断字符串是否为空或者空格
+"字符串".Contains(数组); // 判断字符串中是否包含指定数组
 ```
 
 ObjectExtension
@@ -54,11 +52,8 @@ object.SetProperty("属性名", 属性值); // 使用反射给实例赋值
 
 ```
 MD5.MD5String("要加密的字符串"); // 获取32位小写的MD5串
-
 MD5.MD5StringWithSalt("要加密的字符串", "盐"); // 获取加盐后的32位小写MD5串
-
 MD5.MD5String2("要加密的字符串"); // 获取2次MD5加密的32位小写MD5串
-
 MD5.MD5String2WithSalt("要加密的字符串", "盐"); // 获取加盐后的2次MD5加密的32位小写MD5串
 ```
 
