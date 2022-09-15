@@ -43,5 +43,52 @@ namespace Jx.Toolbox.Extensions
 
             return ignoreCase ? Regex.IsMatch(s, string.Join("|", keys.Select(Regex.Escape)), RegexOptions.IgnoreCase) : Regex.IsMatch(s, string.Join("|", keys.Select(Regex.Escape)));
         }
+
+        /// <summary>
+        /// 转为驼峰，默认转换 '/', ' ', '-', '.', '_'
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="splitChar"></param>
+        /// <returns></returns>
+        public static string ToPascal(this string str, params char[] splitChar)
+        {
+            if (splitChar == null || splitChar.Length == 0)
+            {
+                splitChar = new[] { '/', ' ', '-', '.', '_' };
+            }
+
+            var split = str.Split(splitChar);
+            return split.Select(FirstLetterToUpper).Join("");
+        }
+
+        /// <summary>
+        /// 驼峰转下划线
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string ToUnderLine(this string str)
+        {
+            return Regex.Replace(str, "([A-Z])", "_$1").ToLower().TrimStart('_');
+        }
+
+        /// <summary>
+        /// 首字母转大写
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string FirstLetterToUpper(this string str)
+        {
+            return str.Remove(1).ToUpper() + str.Substring(1);
+        }
+
+        /// <summary>
+        /// 首字母转小写
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string FirstLetterToLower(this string str)
+        {
+            return str.Remove(1).ToLower() + str.Substring(1);
+        }
     }
 }

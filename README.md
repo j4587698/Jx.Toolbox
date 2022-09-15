@@ -41,6 +41,10 @@ StringExtension
 "字符串".IsNullOrEmpty(); // 判断字符串是否为空
 "字符串".IsNullOrWhiteSpace(); // 判断字符串是否为空或者空格
 "字符串".Contains(数组); // 判断字符串中是否包含指定数组
+"字符串".ToPascal(); // 将字符串转换为驼峰形式
+"字符串".ToUnderLine(); // 驼峰转下划线
+"字符串".FirstLetterToLower(); // 字符串首字母小写
+"字符串".FirstLetterToUpper(); // 字符串首字母大写
 ```
 
 ObjectExtension
@@ -54,6 +58,11 @@ EnumExtension
 "字符串".ToEnum(转换失败返回枚举类型, 是否区分大小写); // 字符串转换为枚举类型，如果转换失败，则返回默认类型
 枚举类型.ToEnum(枚举字符串, 是否区分大小写); // 字符串转换为枚举类型
 枚举值.GetDescription(); // 获取枚举的Description，如果没有，则返回内容
+```
+
+StringArrayExtension
+```
+字符数组.Join(分隔符); // 字符数组合并为字符串，默认分隔符为逗号
 ```
 
 ## 加密库
