@@ -45,7 +45,15 @@ StringExtension
 
 ObjectExtension
 ```
-object.SetProperty("属性名", 属性值); // 使用反射给实例赋值
+任意类型.SetProperty("属性名", 属性值); // 使用反射给实例赋值
+```
+
+EnumExtension
+```
+"字符串".ToEnum<枚举类型>(是否区分大小写); // 字符串转换为枚举类型
+"字符串".ToEnum(转换失败返回枚举类型, 是否区分大小写); // 字符串转换为枚举类型，如果转换失败，则返回默认类型
+枚举类型.ToEnum(枚举字符串, 是否区分大小写); // 字符串转换为枚举类型
+枚举值.GetDescription(); // 获取枚举的Description，如果没有，则返回内容
 ```
 
 ## 加密库
