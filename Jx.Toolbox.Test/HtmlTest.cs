@@ -5,17 +5,17 @@ namespace Jx.Toolbox.Test;
 public class HtmlTest
 {
     [Fact]
-    public async Task GetAllImgSrc()
+    public void GetAllImgSrc()
     {
         string str = "<html><body><img src='/test.jpg'><img src='/test1.jpg' /><img /></body></html>";
-        Assert.Collection(await Html.GetAllImgSrc(str), x => Assert.Equal("/test.jpg", x)
+        Assert.Collection(Html.GetAllImgSrc(str), x => Assert.Equal("/test.jpg", x)
         , x => Assert.Equal("/test1.jpg", x));
     }
 
     [Fact]
-    public async Task RemoveHtmlTag()
+    public void RemoveHtmlTag()
     {
         string str = "<html><body><span>test</span><br /><a>test1</a></body></html>";
-        Assert.Equal("testtest1", await Html.RemoveHtmlTag(str));
+        Assert.Equal("testtest1", Html.RemoveHtmlTag(str));
     }
 }

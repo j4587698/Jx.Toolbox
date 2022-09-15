@@ -62,7 +62,7 @@ Html相关
 
 ## html处理
 ```
-await Html.GetAllTagByTagName(要解析的html, 标签名); // 获取html中所有的指定标签节点
-await Html.GetAllImgSrc(要解析的html); // 获取Html中所有的img的src
-await Html.RemoveHtmlTag(要解析的html); // 移除所有Html标签
+Html.GetAllTagByTagName(要解析的html, 标签名); // 获取html中所有的指定标签节点
+Html.GetAllImgSrc(要解析的html); // 获取Html中所有的img的src
+Html.RemoveHtmlTag(要解析的html); // 移除所有Html标签
 ```

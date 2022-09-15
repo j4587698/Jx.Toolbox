@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AngleSharp;
 using AngleSharp.Dom;
+using AngleSharp.Html.Parser;
 
 namespace Jx.Toolbox.HtmlTools
 {
@@ -17,11 +18,11 @@ namespace Jx.Toolbox.HtmlTools
         /// <param name="html">要分析的Html</param>
         /// <param name="tagName">标签名</param>
         /// <returns></returns>
-        public static async Task<IHtmlCollection<IElement>> GetAllTagByTagName(string html, string tagName)
+        public static IHtmlCollection<IElement> GetAllTagByTagName(string html, string tagName)
         {
-            var context = BrowsingContext.New(Configuration.Default);
-            var doc = await context.OpenAsync(request => request.Content(html));
-            return doc.Body.GetElementsByTagName(tagName);
+            var parser = new HtmlParser();
+            var doc = parser.ParseDocument(html);
+            return doc.DocumentElement.GetElementsByTagName(tagName);
         }
         
         /// <summary>
@@ -29,9 +30,9 @@ namespace Jx.Toolbox.HtmlTools
         /// </summary>
         /// <param name="html"></param>
         /// <returns></returns>
-        public static async Task<IEnumerable<string>> GetAllImgSrc(string html)
+        public static IEnumerable<string> GetAllImgSrc(string html)
         {
-            return (await GetAllTagByTagName(html, "img")).Where(x => x.HasAttribute("src")).Select(x => x.GetAttribute("src"));
+            return (GetAllTagByTagName(html, "img")).Where(x => x.HasAttribute("src")).Select(x => x.GetAttribute("src"));
         }
 
         /// <summary>
@@ -40,11 +41,11 @@ namespace Jx.Toolbox.HtmlTools
         /// <param name="html">要处理的Html</param>
         /// <param name="length">截取长度（0代表不截取）</param>
         /// <returns></returns>
-        public static async Task<string> RemoveHtmlTag(string html, int length = 0)
+        public static string RemoveHtmlTag(string html, int length = 0)
         {
-            var context = BrowsingContext.New(Configuration.Default);
-            var doc = await context.OpenAsync(req => req.Content(html));
-            var strText = doc.Body.TextContent;
+            var parser = new HtmlParser();
+            var doc = parser.ParseDocument(html);
+            var strText = doc.DocumentElement.TextContent;
             if (length > 0 && length < strText.Length)
             {
                 strText = strText.Substring(0, length);
