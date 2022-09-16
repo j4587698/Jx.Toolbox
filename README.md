@@ -49,7 +49,8 @@ StringExtension
 
 ObjectExtension
 ```
-任意类型.SetProperty("属性名", 属性值); // 使用反射给实例赋值
+任意类型.GetProperties(属性类型); // 获取所有属性，默认获取public的属性
+任意类型.SetProperty("属性名", 属性值, 属性类型); // 使用反射给实例赋值，默认只查找public的属性
 ```
 
 EnumExtension
