@@ -18,4 +18,11 @@ public class HtmlTest
         string str = "<html><body><span>test</span><br /><a>test1</a></body></html>";
         Assert.Equal("testtest1", Html.RemoveHtmlTag(str));
     }
+
+    [Fact]
+    public void FormatHtml()
+    {
+        var html = "<span>test";
+        Assert.Equal("<span>test</span>", Html.FormatHtml(html));
+    }
 }

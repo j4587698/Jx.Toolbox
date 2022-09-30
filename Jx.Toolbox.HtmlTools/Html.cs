@@ -32,7 +32,7 @@ namespace Jx.Toolbox.HtmlTools
         /// <returns></returns>
         public static IEnumerable<string> GetAllImgSrc(string html)
         {
-            return (GetAllTagByTagName(html, "img")).Where(x => x.HasAttribute("src")).Select(x => x.GetAttribute("src"));
+            return GetAllTagByTagName(html, "img").Where(x => x.HasAttribute("src")).Select(x => x.GetAttribute("src"));
         }
 
         /// <summary>
@@ -52,6 +52,18 @@ namespace Jx.Toolbox.HtmlTools
             }
 
             return strText;
+        }
+
+        /// <summary>
+        /// 格式化html，尝试将不标准的html格式化为标准html
+        /// </summary>
+        /// <param name="html"></param>
+        /// <returns></returns>
+        public static string FormatHtml(string html)
+        {
+            var parser = new HtmlParser();
+            var doc = parser.ParseDocument(html);
+            return doc.Body?.InnerHtml;
         }
     }
 }
