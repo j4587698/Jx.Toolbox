@@ -4,12 +4,14 @@
 ## 工具库
 
 Avatar
+简单的头像处理方法，使用cnavatar获取Email对应的头像
 ```
 await Avatar.GetAvatarUrl("你要获取的Email地址"); // 使用cnavatar来获取此Email对应的头像地址
 await Avatar.GetAvatarBytesAsync("你要获取的Email地址"); // 使用cnavatar来获取此Email对应的头像byte数组
 ```
 
 Mime
+Mime扩展类，用于根据扩展名获取Mime或根据MIME获取扩展名
 ```
 Mime.GetMimeFromExtension("扩展名"); // 根据扩展名获取Mime
 Mime.GetTypeFormExtension("扩展名"); // 根据扩展名获取大类
@@ -17,12 +19,14 @@ Mime.GetExtensionFromMime("Mime"); // 根据Mime获取扩展名
 ```
 
 NumberFormat
+任意进制转换，可以将数字转换为任意进制，或将任意进制转换为数字
 ```
 NumberFormat.ToDecimalString(数字, 要转换的进制); // 将long转换为对应进制字符串
 NumberFormat.ToLong(对应进制字符串, 原进制); // 将字符串按原进制转换为long
 ```
 
 Template
+模板类型，可以自定义模板，然后使用模板来生成字符串
 ```
 var template = Template.Create(要渲染的字符串); // 创建Template实例
 template.SetStartKey(开始标志); // 设置变量开始标志，默认为{{
@@ -32,6 +36,11 @@ var str = template.Render(是否所有变量都必须赋值); // 渲染字符串
 
 // 可以使用链式表达式直接完成所有的操作。
 var str = Template.Create(要渲染的字符串).SetStartKey(开始标志).SetEndKey(结束标志).SetValue(变量名, 变量值).Render(是否所有变量都必须赋值);
+```
+Properties
+Properties扩展类，用于简单的Properties文件独写，可以快速将类转换为Properties文件或将Properties文件转换为类
+```
+Properties.Serialize(要序列化的类); // 将类序列化为Properties字符串
 ```
 
 ## 扩展库
