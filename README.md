@@ -3,6 +3,17 @@
 
 ## 工具库
 
+Base64
+简单的Base64编码解码，以及URL安全的Base64编码解码
+```
+Base64.Encode(string或byte[]); // 编码
+Base64.Decode(string); // 解码为byte[]
+Base64.DecodeToString(string); // 解码为string
+Base64.EncodeUrl(string或byte[]); // 编码为url安全的base64
+Base64.DecodeUrl(string); // url安全的base64解码为byte[]
+Base64.DecodeUrlToString(string); // url安全的base64解码为string
+```
+
 Avatar
 简单的头像处理方法，使用cnavatar获取Email对应的头像
 ```
