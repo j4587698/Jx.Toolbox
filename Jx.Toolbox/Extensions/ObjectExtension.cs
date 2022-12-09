@@ -25,7 +25,7 @@ namespace Jx.Toolbox.Extensions
         /// <param name="value"></param>
         /// <param name="bindingFlags"></param>
         /// <exception cref="InvalidOperationException"></exception>
-        public static void SetProperty(this object obj, string name, object value, BindingFlags bindingFlags = BindingFlags.Public)
+        public static void SetProperty(this object obj, string name, object value, BindingFlags bindingFlags = BindingFlags.Public | BindingFlags.Instance)
         {
             var t = obj.GetType();
             var p = t.GetProperty(name, bindingFlags);
