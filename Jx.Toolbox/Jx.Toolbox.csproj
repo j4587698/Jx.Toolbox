@@ -9,7 +9,7 @@
         <PackageProjectUrl>https://github.com/j4587698/Jx.Toolbox</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageTags>tool</PackageTags>
-        <PackageVersion>0.3.0</PackageVersion>
+        <PackageVersion>0.3.1</PackageVersion>
     </PropertyGroup>
 
 </Project>
