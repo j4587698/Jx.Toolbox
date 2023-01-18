@@ -37,4 +37,14 @@ public class EnumTest
         Assert.Equal("测试", TestEnum.test.GetDescription());
         Assert.Equal("test1", TestEnum.test1.GetDescription());
     }
+    
+    [Fact]
+    public void GetEnumFromDescription()
+    {
+        Assert.Equal(TestEnum.test, "测试".GetValueFromDescription<TestEnum>());
+        Assert.Equal(TestEnum.test1, "test1".GetValueFromDescription<TestEnum>());
+        Assert.Equal(TestEnum.test, typeof(TestEnum).GetValueFromDescription("测试"));
+        Assert.Throws<ArgumentException>(() => typeof(EnumTest).GetValueFromDescription("测试"));
+        Assert.Throws<ArgumentException>(() => typeof(TestEnum).GetValueFromDescription("测试1"));
+    }
 }
