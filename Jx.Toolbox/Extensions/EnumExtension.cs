@@ -64,5 +64,50 @@ namespace Jx.Toolbox.Extensions
             var attr = field.GetCustomAttribute(typeof(DescriptionAttribute));
             return attr == null ? @enum.ToString() : (attr as DescriptionAttribute)?.Description;
         }
+        
+        /// <summary>
+        /// 根据枚举的描述获取枚举
+        /// </summary>
+        /// <param name="description">描述</param>
+        /// <typeparam name="T">枚举类型</typeparam>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static T GetValueFromDescription<T>(this string description) where T : Enum
+        {
+            var type = typeof(T);
+            return (T)GetValueFromDescription(type, description);
+        }
+        
+        /// <summary>
+        /// 根据枚举的描述获取枚举
+        /// </summary>
+        /// <param name="enumType">枚举类型</param>
+        /// <param name="description">描述</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static object GetValueFromDescription(this Type enumType, string description)
+        {
+            if (!enumType.IsEnum)
+            {
+                throw new ArgumentException("类型不是枚举类型");
+            }
+            foreach(var field in enumType.GetFields())
+            {
+                if (Attribute.GetCustomAttribute(field,
+                        typeof(DescriptionAttribute)) is DescriptionAttribute attribute)
+                {
+                    if (attribute.Description == description)
+                        return field.GetValue(null);
+                }
+                else
+                {
+                    if (field.Name == description)
+                        return field.GetValue(null);
+                }
+            }
+
+            throw new ArgumentException("未找到.", nameof(description));
+            // Or return default(T);
+        }
     }
 }
