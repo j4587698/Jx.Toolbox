@@ -54,6 +54,14 @@ Properties扩展类，用于简单的Properties文件独写，可以快速将类
 Properties.Serialize(要序列化的类); // 将类序列化为Properties字符串
 ```
 
+Os
+操作系统类型，用于判断当前操作系统类型
+```
+Os.IsWindows(); // 是否为Windows
+Os.IsLinux(); // 是否为Linux
+Os.IsMacOs(); // 是否为MacOS
+```
+
 ## 扩展库
 
 StringExtension
@@ -65,6 +73,7 @@ StringExtension
 "字符串".ToUnderLine(); // 驼峰转下划线
 "字符串".FirstLetterToLower(); // 字符串首字母小写
 "字符串".FirstLetterToUpper(); // 字符串首字母大写
+"字符串".TrimEx(); // 安全的Trim，如果字符串为null，则返回string.Empty
 ```
 
 ObjectExtension

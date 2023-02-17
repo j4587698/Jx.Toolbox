@@ -90,5 +90,15 @@ namespace Jx.Toolbox.Extensions
         {
             return str.Remove(1).ToLower() + str.Substring(1);
         }
+
+        /// <summary>
+        /// 扩展Trim方法，避免null报错
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string TrimEx(this string str)
+        {
+            return str == null ? string.Empty : str.Trim();
+        }
     }
 }
