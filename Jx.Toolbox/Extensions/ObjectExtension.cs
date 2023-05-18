@@ -55,5 +55,38 @@ namespace Jx.Toolbox.Extensions
                 }
             }
         }
+        
+        /// <summary>
+        /// 将源属性拷贝到目标
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        public static void CopyTo<TSource, TTarget>(this TSource source, TTarget target)
+        {
+            PropertyInfo[] propertyInfos = GetProperties(source, BindingFlags.Public | BindingFlags.Instance);
+            Type targetType = target.GetType();
+            foreach (var propertyInfo in propertyInfos)
+            {
+                object value = propertyInfo.GetValue(source, null);
+                if (value != null)
+                {
+                    targetType.GetProperty(propertyInfo.Name)?.SetValue(target, value, null);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 将目标属性拷贝到源
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TTarget"></typeparam>
+        public static void CopyFrom<TSource, TTarget>(this TSource source, TTarget target)
+        {
+            CopyTo(target, source);
+        }
     }
 }
