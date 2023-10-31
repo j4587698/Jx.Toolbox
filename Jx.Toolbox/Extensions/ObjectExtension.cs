@@ -88,5 +88,18 @@ namespace Jx.Toolbox.Extensions
         {
             CopyTo(target, source);
         }
+        
+        /// <summary>
+        /// 将源属性拷贝到目标
+        /// </summary>
+        /// <param name="source"></param>
+        /// <typeparam name="TTarget"></typeparam>
+        /// <returns></returns>
+        public static TTarget CopyTo<TTarget>(this object source)
+        {
+            var target = Activator.CreateInstance<TTarget>();
+            CopyTo(source, target);
+            return target;
+        }
     }
 }
