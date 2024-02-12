@@ -99,6 +99,12 @@ StringArrayExtension
 字符数组.Join(分隔符); // 字符数组合并为字符串，默认分隔符为逗号
 ```
 
+LongExtension
+```
+可转换为long的数字类型.ToSizeString(); // 转换为00.00 KB类型的字符串，保留两位小数，支持B KB MB GB TB PB EB
+可转换为long的数字类型.ToTimeString(); // 转换为00:00:00格式的字符串
+```
+
 ## 加密库
 
 ```
