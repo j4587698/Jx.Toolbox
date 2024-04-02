@@ -99,6 +99,11 @@ StringArrayExtension
 字符数组.Join(分隔符); // 字符数组合并为字符串，默认分隔符为逗号
 ```
 
+DictionaryExtension
+```
+Dictionary.TryRemove(键, out 值); // 尝试删除指定键的值，同时返回值
+```
+
 ## 加密库
 
 ```
