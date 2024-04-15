@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -99,6 +100,33 @@ namespace Jx.Toolbox.Extensions
         public static string TrimEx(this string str)
         {
             return str == null ? string.Empty : str.Trim();
+        }
+        
+        /// <summary>
+        /// Hex String转换位byte数组
+        /// </summary>
+        /// <param name="hex"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
+        public static byte[] HexStringToBytes(this string hex)
+        {
+            if (string.IsNullOrEmpty(hex))
+            {
+                return Array.Empty<byte>();
+            }
+
+            if (hex.Length % 2 != 0)
+            {
+                throw new ArgumentException("Invalid hex string length");
+            }
+
+            byte[] bytes = new byte[hex.Length / 2];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = Convert.ToByte(hex.Substring(i * 2, 2), 16);
+            }
+
+            return bytes;
         }
     }
 }

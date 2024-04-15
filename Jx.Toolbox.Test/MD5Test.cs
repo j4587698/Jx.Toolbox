@@ -1,4 +1,5 @@
 ﻿using Jx.Toolbox.Cryptography;
+using Jx.Toolbox.Hash;
 
 namespace Jx.Toolbox.Test;
 

@@ -74,6 +74,7 @@ StringExtension
 "字符串".FirstLetterToLower(); // 字符串首字母小写
 "字符串".FirstLetterToUpper(); // 字符串首字母大写
 "字符串".TrimEx(); // 安全的Trim，如果字符串为null，则返回string.Empty
+"字符串".HexStringToBytes(); // 将16进制字符串转换为byte数组
 ```
 
 ObjectExtension
@@ -110,14 +111,30 @@ DictionaryExtension
 Dictionary.TryRemove(键, out 值); // 尝试删除指定键的值，同时返回值
 ```
 
-## 加密库
+ByteArrayExtension
+```
+byte[].ToHexString(); // 将byte数组转换为16进制字符串
+```
+## Hash库
+```
+MD5.MD5String("要计算得字符串"); // 获取32位小写的MD5串
+MD5.MD5StringWithSalt("要计算得字符串", "盐"); // 获取加盐后的32位小写MD5串
+MD5.MD5String2("要计算得字符串"); // 获取2次MD5加密的32位小写MD5串
+MD5.MD5String2WithSalt("要计算得字符串", "盐"); // 获取加盐后的2次MD5加密的32位小写MD5串
 
+ShaHash.ComputeSha1Hash("要计算得字符串"); // 获取40位小写的Sha1串
+ShaHash.ComputeSha256Hash("要计算得字符串"); // 获取64位小写的Sha256串
 ```
-MD5.MD5String("要加密的字符串"); // 获取32位小写的MD5串
-MD5.MD5StringWithSalt("要加密的字符串", "盐"); // 获取加盐后的32位小写MD5串
-MD5.MD5String2("要加密的字符串"); // 获取2次MD5加密的32位小写MD5串
-MD5.MD5String2WithSalt("要加密的字符串", "盐"); // 获取加盐后的2次MD5加密的32位小写MD5串
+
+## 加密库
 ```
+AesEncryption.Encrypt("要加密的字符串", "密钥", "向量"); // 使用Aes加密字符串
+AesEncryption.Decrypt("要解密的字符串", "密钥", "向量"); // 使用Aes解密字符串
+
+DesEncryption.Encrypt("要加密的字符串", "密钥", "向量"); // 使用Des加密字符串
+DesEncryption.Decrypt("要解密的字符串", "密钥", "向量"); // 使用Des解密字符串
+```
+
 
 # Jx.Toolbox.HtmlTools
 Html相关

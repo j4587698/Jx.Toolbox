@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Jx.Toolbox.Cryptography
+namespace Jx.Toolbox.Hash
 {
     public static class MD5
     {

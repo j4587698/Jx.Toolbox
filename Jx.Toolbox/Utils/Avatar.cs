@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Jx.Toolbox.Cryptography;
 using Jx.Toolbox.Extensions;
+using Jx.Toolbox.Hash;
 
 namespace Jx.Toolbox.Utils
 {
