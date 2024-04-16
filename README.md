@@ -127,10 +127,18 @@ ShaHash.ComputeSha256Hash("要计算得字符串"); // 获取64位小写的Sha25
 ```
 
 ## 加密库
+AesEncryption
 ```
+AesEncryption.CreateKey(); // 创建一个随机的Aes密钥
+AesEncryption.CreateIV(); // 创建一个随机的Aes向量
 AesEncryption.Encrypt("要加密的字符串", "密钥", "向量"); // 使用Aes加密字符串
 AesEncryption.Decrypt("要解密的字符串", "密钥", "向量"); // 使用Aes解密字符串
+```
 
+DesEncryption
+```
+DesEncryption.CreateKey(); // 创建一个随机的Des密钥
+DesEncryption.CreateIV(); // 创建一个随机的Des向量
 DesEncryption.Encrypt("要加密的字符串", "密钥", "向量"); // 使用Des加密字符串
 DesEncryption.Decrypt("要解密的字符串", "密钥", "向量"); // 使用Des解密字符串
 ```

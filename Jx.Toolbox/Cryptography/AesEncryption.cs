@@ -9,8 +9,41 @@ namespace Jx.Toolbox.Cryptography
     /// <summary>
     /// Aes加解密
     /// </summary>
-    public class AesEncryption
+    public static class AesEncryption
     {
+        /// <summary>
+        /// 生成密钥
+        /// </summary>
+        /// <returns></returns>
+        public static string CreateKey()
+        {
+            using (Aes aes = Aes.Create())
+            {
+                return aes.Key.ToHexString();
+            }
+        }
+        
+        /// <summary>
+        /// 生成IV
+        /// </summary>
+        /// <returns></returns>
+        public static string CreateIv()
+        {
+            using (Aes aes = Aes.Create())
+            {
+                return aes.IV.ToHexString();
+            }
+        }
+        
+        /// <summary>
+        /// Aes加密
+        /// </summary>
+        /// <param name="plainText"></param>
+        /// <param name="key"></param>
+        /// <param name="iv"></param>
+        /// <param name="cipherMode"></param>
+        /// <param name="paddingMode"></param>
+        /// <returns></returns>
         public static string Encrypt(string plainText, string key, string iv, CipherMode cipherMode = CipherMode.CBC,
             PaddingMode paddingMode = PaddingMode.PKCS7)
         {
@@ -51,6 +84,15 @@ namespace Jx.Toolbox.Cryptography
             }
         }
         
+        /// <summary>
+        /// Aes解密
+        /// </summary>
+        /// <param name="cipherText"></param>
+        /// <param name="key"></param>
+        /// <param name="iv"></param>
+        /// <param name="cipherMode"></param>
+        /// <param name="paddingMode"></param>
+        /// <returns></returns>
         public static string Decrypt(string cipherText, string key, string iv, CipherMode cipherMode = CipherMode.CBC,
             PaddingMode paddingMode = PaddingMode.PKCS7)
         {
