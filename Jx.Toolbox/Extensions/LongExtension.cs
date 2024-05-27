@@ -60,8 +60,9 @@ namespace Jx.Toolbox.Extensions
                 // 使用TimeSpan从秒数创建时间间隔
                 TimeSpan time = TimeSpan.FromSeconds(seconds);
 
+                return time.ToString(time.TotalHours < 1 ? @"mm\:ss" : @"hh\:mm\:ss");
+
                 // 返回格式化的时间字符串
-                return time.ToString(@"hh\:mm\:ss");
             }
             catch (OverflowException)
             {
