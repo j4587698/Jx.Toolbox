@@ -115,6 +115,12 @@ ByteArrayExtension
 ```
 byte[].ToHexString(); // 将byte数组转换为16进制字符串
 ```
+
+ListExtension
+```
+IList.Shuffle(); //对指定的IList进行洗牌
+```
+
 ## Hash库
 ```
 MD5.MD5String("要计算得字符串"); // 获取32位小写的MD5串
