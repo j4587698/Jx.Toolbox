@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jx.Toolbox.Test", "Jx.Toolb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jx.Toolbox.HtmlTools", "Jx.Toolbox.HtmlTools\Jx.Toolbox.HtmlTools.csproj", "{B0802A70-3E75-422B-91BC-6BC8719726AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jx.Toolbox.Mvc", "Jx.Toolbox.Mvc\Jx.Toolbox.Mvc.csproj", "{525C965F-C129-4835-AF93-F39BB0B4FAF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B0802A70-3E75-422B-91BC-6BC8719726AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0802A70-3E75-422B-91BC-6BC8719726AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0802A70-3E75-422B-91BC-6BC8719726AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{525C965F-C129-4835-AF93-F39BB0B4FAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{525C965F-C129-4835-AF93-F39BB0B4FAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{525C965F-C129-4835-AF93-F39BB0B4FAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{525C965F-C129-4835-AF93-F39BB0B4FAF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
