@@ -34,4 +34,9 @@ jobs:
         PROJECT_FILE_PATH: Jx.Toolbox.HtmlTools/Jx.Toolbox.HtmlTools.csproj
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        
+    - name: Publish Jx.Toolbox.Mvc
+      uses: alirezanet/publish-nuget@v3.0.4
+      with:
+        PROJECT_FILE_PATH: Jx.Toolbox.HtmlTools/Jx.Toolbox.Mvc.csproj
+        VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
+        NUGET_KEY: ${{secrets.NUGET_API_KEY}}
