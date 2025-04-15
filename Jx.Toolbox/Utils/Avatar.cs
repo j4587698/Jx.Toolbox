@@ -16,7 +16,7 @@ namespace Jx.Toolbox.Utils
         /// <returns></returns>
         public static string GetAvatarUrl(string email)
         {
-            return email.IsNullOrEmpty() ? null : $"https://cravatar.cn/avatar/{MD5.MD5String(email.ToLower())}";
+            return email.IsNullOrEmpty() ? null : $"https://cravatar.com/avatar/{MD5.MD5String(email.ToLower())}";
         }
 
         /// <summary>
