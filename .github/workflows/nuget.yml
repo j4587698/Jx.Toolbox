@@ -37,6 +37,6 @@ jobs:
     - name: Publish Jx.Toolbox.Mvc
       uses: tedd/publish-nuget-neo@v1.0.2
       with:
-        PROJECT_FILE_PATH: Jx.Toolbox.HtmlTools/Jx.Toolbox.Mvc.csproj
+        PROJECT_FILE_PATH: Jx.Toolbox.Mvc/Jx.Toolbox.Mvc.csproj
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
