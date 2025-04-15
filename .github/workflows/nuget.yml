@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Setup .NET
-      uses: actions/setup-dotnet@v2
+      uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 9.0.x
     - name: Restore dependencies
@@ -21,19 +21,19 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Publish Jx.Toolboox
-      uses: alirezanet/publish-nuget@v3.0.4
+      uses: tedd/publish-nuget-neo@v1.0.2
       with:
         PROJECT_FILE_PATH: Jx.Toolbox/Jx.Toolbox.csproj
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
     - name: Publish Jx.Toolbox.HtmlTools
-      uses: alirezanet/publish-nuget@v3.0.4
+      uses: tedd/publish-nuget-neo@v1.0.2
       with:
         PROJECT_FILE_PATH: Jx.Toolbox.HtmlTools/Jx.Toolbox.HtmlTools.csproj
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
     - name: Publish Jx.Toolbox.Mvc
-      uses: alirezanet/publish-nuget@v3.0.4
+      uses: tedd/publish-nuget-neo@v1.0.2
       with:
         PROJECT_FILE_PATH: Jx.Toolbox.HtmlTools/Jx.Toolbox.Mvc.csproj
         VERSION_REGEX: ^\s*<PackageVersion>(.*)<\/PackageVersion>\s*$
